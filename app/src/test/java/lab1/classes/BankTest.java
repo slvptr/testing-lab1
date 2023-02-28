@@ -4,6 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
 
+import static org.junit.Assert.*;
+
+
 public class BankTest {
     private Bank bank;
 
@@ -18,7 +21,7 @@ public class BankTest {
     @Test
     public void testGetAllCash() {
         bank.getAllCash();
-        Assert.assertEquals(0, bank.getFireproofCashbox());
+        assertEquals(0, bank.getFireproofCashbox());
     }
 
     @Test
@@ -27,7 +30,7 @@ public class BankTest {
                 new Employee("test_employee1", 100, BankPost.GUARD),
                 new Employee("test_employee2", 100, BankPost.PROGRAMMER));
 
-        Assert.assertEquals(bank, twinBank);
+        assertEquals(bank, twinBank);
     }
 
     @Test
@@ -35,54 +38,54 @@ public class BankTest {
         Bank twinBank = new Bank("test_bank",
                 new Employee("test_employee1", 100, BankPost.GUARD),
                 new Employee("test_employee2", 42, BankPost.PROGRAMMER));
-        Assert.assertNotEquals(bank, twinBank);
+        assertNotEquals(bank, twinBank);
 
         twinBank = new Bank("test_bank",
                 new Employee("test_employee3", 100, BankPost.GUARD),
                 new Employee("test_employee2", 100, BankPost.PROGRAMMER));
-        Assert.assertNotEquals(bank, twinBank);
+        assertNotEquals(bank, twinBank);
 
         twinBank = new Bank("test_bank@23",
                 new Employee("test_employee1", 100, BankPost.GUARD),
                 new Employee("test_employee2", 100, BankPost.PROGRAMMER));
-        Assert.assertNotEquals(bank, twinBank);
+        assertNotEquals(bank, twinBank);
 
         twinBank = new Bank("test_bank",
                 new Employee("test_employee1", 100, BankPost.GUARD),
                 new Employee("test_employee2", 100, BankPost.LAWYER));
-        Assert.assertNotEquals(bank, twinBank);
+        assertNotEquals(bank, twinBank);
     }
 
     @Test
-    public void testHashCodeEqual() {
+    public void testHashCodeEquals() {
         Bank twinBank = new Bank("test_bank",
                 new Employee("test_employee1", 100, BankPost.GUARD),
                 new Employee("test_employee2", 100, BankPost.PROGRAMMER));
 
-        Assert.assertEquals(bank, twinBank);
+        assertEquals(bank, twinBank);
     }
 
     @Test
-    public void testHashCodeNotEqual() {
+    public void testHashCodeNotEquals() {
         Bank twinBank = new Bank("test_bank",
                 new Employee("test_employee1", 100, BankPost.GUARD),
                 new Employee("test_employee2", 42, BankPost.PROGRAMMER));
-        Assert.assertNotEquals(bank.hashCode(), twinBank.hashCode());
+        assertNotEquals(bank.hashCode(), twinBank.hashCode());
 
         twinBank = new Bank("test_bank",
                 new Employee("test_employee3", 100, BankPost.GUARD),
                 new Employee("test_employee2", 100, BankPost.PROGRAMMER));
-        Assert.assertNotEquals(bank.hashCode(), twinBank.hashCode());
+        assertNotEquals(bank.hashCode(), twinBank.hashCode());
 
         twinBank = new Bank("test_bank#@",
                 new Employee("test_employee1", 100, BankPost.GUARD),
                 new Employee("test_employee2", 100, BankPost.PROGRAMMER));
-        Assert.assertNotEquals(bank.hashCode(), twinBank.hashCode());
+        assertNotEquals(bank.hashCode(), twinBank.hashCode());
 
         twinBank = new Bank("test_bank",
                 new Employee("test_employee1", 100, BankPost.GUARD),
                 new Employee("test_employee2", 100, BankPost.LAWYER));
-        Assert.assertNotEquals(bank.hashCode(), twinBank.hashCode());
+        assertNotEquals(bank.hashCode(), twinBank.hashCode());
     }
 
 }
