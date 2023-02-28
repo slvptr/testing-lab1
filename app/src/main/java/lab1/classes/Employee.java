@@ -37,7 +37,7 @@ public class Employee extends Human {
         Employee employee = (Employee) o;
         return post == employee.post &&
                 super.getHP() == employee.getHP() &&
-                super.getName() == employee.getName();
+                super.getName().equals(employee.getName());
     }
 
     @Override

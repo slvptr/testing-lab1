@@ -39,11 +39,7 @@ public class App {
 
         Gang.InBankActions inBankActions = gang.new InBankActions();
 
-        try {
-            System.out.println(gang.getName() + " выгребли из кассы " + gang.getStolenCash() + "$ и спрятали их в чемодан\n");
-        } catch (Exception e) {
-            System.out.println("Не получилось вскрыть кассу :/\n");
-        }
+        System.out.println(gang.getName() + " выгребли из кассы " + cash + "$ и спрятали их в чемодан\n");
 
         firstManager.pushEmergencyButton(bank);
         System.out.println(firstManager.getName() + " нажала на кнопку тревоги. Полицейские уже выехали!\n");
