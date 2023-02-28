@@ -27,7 +27,7 @@ public class PoliceTest {
     }
 
     @Test
-    public void testGetSquadState() {
+    public void getSquadState() {
         assertEquals("Wrong number of policemen", police.getSquadState(), 0);
         gangster.shootAtHuman(policeman1);
         assertEquals("Wrong number of policemen", police.getSquadState(), 1);

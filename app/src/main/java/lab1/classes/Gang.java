@@ -8,7 +8,6 @@ public class Gang implements IHeist {
 
     private final String name;
     private Bank targetBank;
-    private int stolenCash = 0;
     private boolean gangInBank = false;
     private boolean spottedByPolice = false;
     protected ArrayList<Gangster> gangsters;
@@ -89,7 +88,7 @@ public class Gang implements IHeist {
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(targetBank, gangsters.size(), stolenCash);
+        int result = Objects.hash(targetBank, gangsters.size());
         result = 31 * result + gangsters.hashCode();
         return result;
     }
@@ -98,7 +97,6 @@ public class Gang implements IHeist {
     public String toString() {
         return "Gang[" +
                 "size=" + gangsters.size() +
-                ", stolenCash=" + stolenCash + "$" +
                 ", targetBank=" + targetBank +
                 ", gangsters=" + gangsters.toString() +
                 ']';
