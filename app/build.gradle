@@ -11,6 +11,15 @@ plugins {
     id 'application'
 }
 
+mainClassName = 'lab1.App'
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
+
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -26,5 +35,10 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'lab1.App'
+    mainClass = mainClassName
+}
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
 }
