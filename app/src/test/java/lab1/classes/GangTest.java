@@ -22,7 +22,7 @@ public class GangTest {
         policeman = new Policeman("Alex", 100);
         gangster1 = new Gangster("Max", 100, WeaponType.GRENADE);
         gangster2 = new Gangster("Oleg", 30, WeaponType.MACHINE_GUN);
-        gangster3 = new Gangster("Max", 100, WeaponType.MACHINE_GUN);
+        gangster3 = new Gangster("Max", 100, WeaponType.GRENADE);
         employee1 = new Employee("Victor", 100, BankPost.CASHIER);
         employee1 = new Employee("Victor", 100, BankPost.PROGRAMMER);
         gang = new Gang("Gang", gangster1, gangster2);
