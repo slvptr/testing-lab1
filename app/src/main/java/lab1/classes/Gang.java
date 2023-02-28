@@ -69,6 +69,9 @@ public class Gang implements IHeist {
     @Override
     public void burstIntoBank(BurstIntoTypes burstIntoType) {
         gangInBank = true;
+        if (targetBank == null)
+            throw new NoBankTargetException("Сначала нужно понять какой банк грабить...");
+
         targetBank.gangIntoBank = this;
 
         if (burstIntoType == BurstIntoTypes.LOUDLY) {
