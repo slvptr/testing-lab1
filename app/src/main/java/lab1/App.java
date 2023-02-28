@@ -4,8 +4,6 @@ import lab1.classes.*;
 
 public class App {
 
-    public static boolean manualFireFight = false;
-
     public static void main(String[] args) throws Exception {
 
         System.out.println("THE STORY ABOUT ONE HEIST...\n\n");
@@ -74,40 +72,33 @@ public class App {
 
         FireFight fireFight = new FireFight(gang, police);
 
-        if (manualFireFight) {
-            fireFight.shoot(sid, firstPoliceman);
-            System.out.println(sid.getName() + " выстрелил в " + firstPoliceman.getName() + " [" + firstPoliceman.getHP() + "HP]");
+        fireFight.shoot(sid, firstPoliceman);
+        System.out.println(sid.getName() + " выстрелил в " + firstPoliceman.getName() + " [" + firstPoliceman.getHP() + "HP]");
 
-            fireFight.shoot(nancy, firstPoliceman);
-            System.out.println(nancy.getName() + " выстрелила в " + firstPoliceman.getName() + " [" + firstPoliceman.getHP() + "HP]");
-            System.out.println(firstPoliceman.getName() + " убит");
+        fireFight.shoot(nancy, firstPoliceman);
+        System.out.println(nancy.getName() + " выстрелила в " + firstPoliceman.getName() + " [" + firstPoliceman.getHP() + "HP]");
+        System.out.println(firstPoliceman.getName() + " убит");
 
-            fireFight.shoot(secondPoliceman, sid);
-            System.out.println(secondPoliceman.getName() + " выстрелил в " + sid.getName() + " [" + sid.getHP() + "HP]");
+        fireFight.shoot(secondPoliceman, sid);
+        System.out.println(secondPoliceman.getName() + " выстрелил в " + sid.getName() + " [" + sid.getHP() + "HP]");
 
-            fireFight.shoot(thirdPoliceman, nancy);
-            System.out.println(thirdPoliceman.getName() + " выстрелил в " + nancy.getName() + " [" + nancy.getHP() + "HP]");
+        fireFight.shoot(thirdPoliceman, nancy);
+        System.out.println(thirdPoliceman.getName() + " выстрелил в " + nancy.getName() + " [" + nancy.getHP() + "HP]");
 
-            fireFight.shoot(nancy, thirdPoliceman);
-            System.out.println(nancy.getName() + " выстрелила в " + thirdPoliceman.getName() + " [" + thirdPoliceman.getHP() + "HP]");
+        fireFight.shoot(nancy, thirdPoliceman);
+        System.out.println(nancy.getName() + " выстрелила в " + thirdPoliceman.getName() + " [" + thirdPoliceman.getHP() + "HP]");
 
-            fireFight.shoot(sid, secondPoliceman);
-            System.out.println(sid.getName() + " выстрелил в " + secondPoliceman.getName() + " [" + secondPoliceman.getHP() + "HP]");
+        fireFight.shoot(sid, secondPoliceman);
+        System.out.println(sid.getName() + " выстрелил в " + secondPoliceman.getName() + " [" + secondPoliceman.getHP() + "HP]");
 
-            fireFight.shoot(sid, thirdPoliceman);
-            System.out.println(sid.getName() + " выстрелила в " + thirdPoliceman.getName() + " [" + thirdPoliceman.getHP() + "HP]");
-            System.out.println(thirdPoliceman.getName() + " убит\n");
+        fireFight.shoot(sid, thirdPoliceman);
+        System.out.println(sid.getName() + " выстрелила в " + thirdPoliceman.getName() + " [" + thirdPoliceman.getHP() + "HP]");
+        System.out.println(thirdPoliceman.getName() + " убит\n");
 
-            System.out.println("Перестрелка закончилась. В ходе нее было убито "
-                    + police.getSquadState() + " полицейских и " + gang.getSquadState() + " бандитов\n");
+        System.out.println("Перестрелка закончилась. В ходе нее было убито "
+                + police.getSquadState() + " полицейских и " + gang.getSquadState() + " бандитов\n");
 
-            inBankActions.offIt();
-            System.out.println("Банда " + gang.getName() + " успешно смылась с места преступления");
-        }
-        else {
-            fireFight.setGangAccuracy(0.6);
-            fireFight.setPoliceAccuracy(0.4);
-            fireFight.autoFight();
-        }
+        inBankActions.offIt();
+        System.out.println("Банда " + gang.getName() + " успешно смылась с места преступления");
     }
 }

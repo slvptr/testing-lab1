@@ -51,7 +51,7 @@ public class Gang implements IHeist {
     }
 
 
-    public Gang(String name, Gangster...gangsters) {
+    public Gang(String name, Gangster ...gangsters) {
         this.name = name;
         this.gangsters = ArrayListFromArray.convert(gangsters);
     }
