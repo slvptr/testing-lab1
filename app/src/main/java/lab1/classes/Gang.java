@@ -38,10 +38,6 @@ public class Gang implements IHeist {
         this.gangsters = ArrayListFromArray.convert(gangsters);
     }
 
-    public int getStolenCash() throws Exception {
-        throw new Exception();
-    }
-
 
     public int getSquadState(){
         int numOfKilledGangsters = 0;

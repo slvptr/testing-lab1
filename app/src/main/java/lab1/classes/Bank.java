@@ -34,15 +34,6 @@ public class Bank {
         return value;
     }
 
-    public Employee chooseEmployee(String name) {
-        for (Employee e : employees) {
-            if (e.getName().equals(name)) {
-                return e;
-            }
-        }
-        return null;
-    }
-
     public int getFireproofCashbox() {
         return fireproofCashbox;
     }
