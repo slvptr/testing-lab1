@@ -15,24 +15,6 @@ public class Gang implements IHeist {
 
     public class InBankActions {
 
-        public void getCash (int cash) {
-            if (gangInBank) {
-                stolenCash = cash;
-            }
-            else {
-                throw new OutOfBankException("Нельзя выполнить данное действие, находясь вне банка");
-            }
-        }
-
-        public void pushEmployeeInChest (Employee e) {
-            if (gangInBank) {
-                targetBank.fireproofChest.add(e);
-            }
-            else {
-                throw new OutOfBankException("Нельзя выполнить данное действие, находясь вне банка");
-            }
-        }
-
         public void killEmployee(Gangster killer, Employee employee) {
             if (gangInBank) {
                 while (employee.getHP() > 0) {
@@ -60,14 +42,6 @@ public class Gang implements IHeist {
         throw new Exception();
     }
 
-    public Gangster chooseGangster(String name) {
-        for (Gangster g : gangsters) {
-            if (g.getName().equals(name)) {
-                return g;
-            }
-        }
-        return null;
-    }
 
     public int getSquadState(){
         int numOfKilledGangsters = 0;
