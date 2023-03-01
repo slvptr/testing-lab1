@@ -1,7 +1,7 @@
-package lab1.classes;
+package lab1.story.classes;
 
 
-import lab1.classes.Instruments.Rand;
+import lab1.story.classes.Instruments.Rand;
 
 public enum WeaponType {
     GUN(30), RIFLE(50), MACHINE_GUN(80), GRENADE(100);

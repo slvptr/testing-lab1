@@ -1,4 +1,4 @@
-package lab1.classes.Instruments;
+package lab1.story.classes.Instruments;
 
 import java.util.ArrayList;
 

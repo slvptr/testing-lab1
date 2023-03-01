@@ -1,8 +1,7 @@
-package lab1.classes;
+package lab1.story.classes;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 
 import static org.junit.Assert.*;
 

@@ -1,4 +1,4 @@
-package lab1.classes;
+package lab1.story.classes;
 
 public abstract class Human {
     private int HP;

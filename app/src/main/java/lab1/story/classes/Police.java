@@ -1,7 +1,7 @@
-package lab1.classes;
+package lab1.story.classes;
 
 
-import lab1.classes.Instruments.ArrayListFromArray;
+import lab1.story.classes.Instruments.ArrayListFromArray;
 
 import java.util.ArrayList;
 import java.util.Objects;

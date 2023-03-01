@@ -1,4 +1,4 @@
-package lab1.classes;
+package lab1.story.classes;
 
 import org.junit.Before;
 import org.junit.Test;

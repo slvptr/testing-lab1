@@ -1,7 +1,5 @@
-package lab1.classes;
+package lab1.story.classes;
 
-
-import lab1.classes.Instruments.Rand;
 
 public class FireFight {
 

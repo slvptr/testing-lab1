@@ -1,7 +1,7 @@
-package lab1.classes;
+package lab1.story.classes;
 
 
-import lab1.classes.Instruments.Rand;
+import lab1.story.classes.Instruments.Rand;
 
 public enum BankPost {
     CASHIER, GUARD, MANAGER, PROGRAMMER, LAWYER;
