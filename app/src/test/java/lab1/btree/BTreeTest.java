@@ -25,7 +25,7 @@ public class BTreeTest {
     }
 
     @Test
-    public void insert() {
+    public void insert1() {
         bTree.insert(8);
         bTree.insert(9);
         bTree.insert(3);
@@ -36,9 +36,18 @@ public class BTreeTest {
         bTree.insert(20);
         bTree.insert(17);
 
-        Assert.assertEquals( isPrefixEqual(bTree.root.key, 9, 15), true);
-        Assert.assertEquals( isPrefixEqual(bTree.root.child[0].key, 3, 8), true);
-        Assert.assertEquals( isPrefixEqual(bTree.root.child[1].key, 10, 11), true);
-        Assert.assertEquals( isPrefixEqual(bTree.root.child[2].key, 17, 20, 21), true);
+        assertTrue(isPrefixEqual(bTree.root.key, 9, 15));
+        assertEquals( isPrefixEqual(bTree.root.child[0].key, 3, 8), true);
+        assertEquals( isPrefixEqual(bTree.root.child[1].key, 10, 11), true);
+        assertEquals( isPrefixEqual(bTree.root.child[2].key, 17, 20, 21), true);
+    }
+
+    @Test
+    public void insert2() {
+        bTree.insert(1);
+        bTree.insert(3);
+        bTree.insert(5);
+
+        assertEquals( isPrefixEqual(bTree.root.key, 1, 3, 5), true);
     }
 }

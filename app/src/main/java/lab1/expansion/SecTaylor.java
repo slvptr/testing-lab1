@@ -31,10 +31,18 @@ public class SecTaylor {
         double sec = secTaylor(x, n);
         double realSec = 1 / Math.cos(x);
 
+        System.out.println(sec);
+        System.out.println(realSec);
+
+
         if (Math.abs(sec - realSec) < 0.1) {
             return true;
         }
 
         return false;
+    }
+
+    public static void main(String[] args) {
+        checkCalculator(6.28, 21);
     }
 }
