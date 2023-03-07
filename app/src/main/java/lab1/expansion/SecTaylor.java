@@ -9,7 +9,7 @@ import java.util.List;
 
 public class SecTaylor {
 
-    public static int getFactorial(int f) {
+    private static int factorial(int f) {
         int result = 1;
         for (int i = 1; i <= f; i++) {
             result = result * i;
@@ -17,32 +17,8 @@ public class SecTaylor {
         return result;
     }
 
-    public static double secTaylor(double x, int n) {
-        double result = 1.0;
-        double term = 1.0;
-        for (int i = 1; i <= n; i++) {
-            term *= -x * x / (2 * i - 1) / (2 * i);
-            result += term;
-        }
-        return result;
-    }
-
-    public static boolean checkCalculator(double x, int n) {
-        double sec = secTaylor(x, n);
-        double realSec = 1 / Math.cos(x);
-
-        System.out.println(sec);
-        System.out.println(realSec);
-
-
-        if (Math.abs(sec - realSec) < 0.1) {
-            return true;
-        }
-
-        return false;
-    }
-
-    public static void main(String[] args) {
-        checkCalculator(6.28, 21);
+    public static double compute(double x) {
+        return 1 + Math.pow(x, 2) / factorial(2) + 5 * Math.pow(x, 4) / factorial(4) +
+                61 * Math.pow(x, 6) / factorial(6) + 1385 * Math.pow(x, 8) / factorial(8);
     }
 }
