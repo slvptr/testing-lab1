@@ -1,10 +1,14 @@
 package lab1.story.classes;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
+@RunWith(JUnitParamsRunner.class)
 public class EmployeeTest {
 
     private Employee employee;
@@ -28,14 +32,13 @@ public class EmployeeTest {
     }
 
     @Test
-    public void testNotEquals() {
-        Employee twinEmployee = new Employee("test_employee123", 100, BankPost.CASHIER);
-        assertNotEquals(employee, twinEmployee);
-
-        twinEmployee = new Employee("test_employee", 666, BankPost.CASHIER);
-        assertNotEquals(employee, twinEmployee);
-
-        twinEmployee = new Employee("test_employee", 100, BankPost.PROGRAMMER);
+    @Parameters({
+            "test_employee123, 100, CASHIER",
+            "test_employee, 99, CASHIER",
+            "test_employee, 100, PROGRAMMER",
+    })
+    public void testNotEquals(String name, int HP, BankPost post) {
+        Employee twinEmployee = new Employee(name, HP, post);
         assertNotEquals(employee, twinEmployee);
     }
 
@@ -46,14 +49,13 @@ public class EmployeeTest {
     }
 
     @Test
-    public void testHashCodeNotEquals() {
-        Employee twinEmployee = new Employee("test_employee123", 100, BankPost.CASHIER);
-        assertNotEquals(employee.hashCode(), twinEmployee.hashCode());
-
-        twinEmployee = new Employee("test_employee", 666, BankPost.CASHIER);
-        assertNotEquals(employee.hashCode(), twinEmployee.hashCode());
-
-        twinEmployee = new Employee("test_employee", 100, BankPost.PROGRAMMER);
+    @Parameters({
+            "test_employee123, 100, CASHIER",
+            "test_employee, 99, CASHIER",
+            "test_employee, 100, PROGRAMMER",
+    })
+    public void testHashCodeNotEquals(String name, int HP, BankPost post) {
+        Employee twinEmployee = new Employee(name, HP, post);
         assertNotEquals(employee.hashCode(), twinEmployee.hashCode());
     }
 }

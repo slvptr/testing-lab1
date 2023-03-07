@@ -13,14 +13,15 @@ import static org.junit.Assert.*;
 public class SecTaylorTest {
     @Test
     @Parameters({
-            "0, 0.01",
-            "1, 0.01",
-            "3.14, 0.01",
-            "42, 0.01",
+            "0.1, 0.01",
+            "-0.12, 0.001",
+            "0.314, 0.0001",
+            "0.414, 0.0001",
+            "0, 0.00001",
     })
     public void sec(double x, double delta) {
-        double computedSec = SecTaylor.compute(0);
-        double realSec = 1 / Math.cos(0);
+        double computedSec = SecTaylor.compute(x);
+        double realSec = 1 / Math.cos(x);
         assertEquals(computedSec, realSec, delta);
     }
 }

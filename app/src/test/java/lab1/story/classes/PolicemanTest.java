@@ -28,8 +28,8 @@ public class PolicemanTest {
 
     @Test
     public void testEquals() {
-        assertTrue("Equals does not work!", policeman1.equals(policeman3));
-        assertFalse("Equals does not work!", policeman1.equals(policeman2));
+        assertEquals("Equals does not work!", policeman1, policeman3);
+        assertNotEquals("Equals does not work!", policeman1, policeman2);
     }
 
     @Test

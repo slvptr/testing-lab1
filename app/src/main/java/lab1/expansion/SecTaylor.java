@@ -18,7 +18,7 @@ public class SecTaylor {
     }
 
     public static double compute(double x) {
-        return 1 + Math.pow(x, 2) / factorial(2) + 5 * Math.pow(x, 4) / factorial(4) +
-                61 * Math.pow(x, 6) / factorial(6) + 1385 * Math.pow(x, 8) / factorial(8);
+       return 1 + Math.pow(x, 2) / factorial(2) + 5 * Math.pow(x, 4) / factorial(4) +
+               61 * Math.pow(x, 6) / factorial(6) + 1385 * Math.pow(x, 8) / factorial(8);
     }
 }

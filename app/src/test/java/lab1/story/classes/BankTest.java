@@ -1,11 +1,14 @@
 package lab1.story.classes;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-
+@RunWith(JUnitParamsRunner.class)
 public class BankTest {
     private Bank bank;
 
@@ -33,25 +36,19 @@ public class BankTest {
     }
 
     @Test
-    public void testNotEquals() {
-        Bank twinBank = new Bank("test_bank",
-                new Employee("test_employee1", 100, BankPost.GUARD),
-                new Employee("test_employee2", 42, BankPost.PROGRAMMER));
-        assertNotEquals(bank, twinBank);
+    @Parameters({
+            "test_bank, test_employee1, 100, GUARD, test_employee2, 42, PROGRAMMER",
+            "test_bank, test_employee3, 100, GUARD, test_employee2, 100, PROGRAMMER",
+            "test_bank@23, test_employee1, 100, GUARD, test_employee2, 100, PROGRAMMER",
+            "test_bank, test_employee1, 100, GUARD, test_employee2, 100, LAWYER",
 
-        twinBank = new Bank("test_bank",
-                new Employee("test_employee3", 100, BankPost.GUARD),
-                new Employee("test_employee2", 100, BankPost.PROGRAMMER));
-        assertNotEquals(bank, twinBank);
+    })
+    public void testNotEquals(String bankName, String employee1Name, int employee1HP, BankPost employee1PostName,
+                              String employee2Name, int employee2HP, BankPost employee2PostName) {
 
-        twinBank = new Bank("test_bank@23",
-                new Employee("test_employee1", 100, BankPost.GUARD),
-                new Employee("test_employee2", 100, BankPost.PROGRAMMER));
-        assertNotEquals(bank, twinBank);
-
-        twinBank = new Bank("test_bank",
-                new Employee("test_employee1", 100, BankPost.GUARD),
-                new Employee("test_employee2", 100, BankPost.LAWYER));
+        Bank twinBank = new Bank(bankName,
+                new Employee(employee1Name, employee1HP, employee1PostName),
+                new Employee(employee2Name, employee2HP, employee2PostName));
         assertNotEquals(bank, twinBank);
     }
 
@@ -65,25 +62,19 @@ public class BankTest {
     }
 
     @Test
-    public void testHashCodeNotEquals() {
-        Bank twinBank = new Bank("test_bank",
-                new Employee("test_employee1", 100, BankPost.GUARD),
-                new Employee("test_employee2", 42, BankPost.PROGRAMMER));
-        assertNotEquals(bank.hashCode(), twinBank.hashCode());
+    @Parameters({
+            "test_bank, test_employee1, 100, GUARD, test_employee2, 42, PROGRAMMER",
+            "test_bank, test_employee3, 100, GUARD, test_employee2, 100, PROGRAMMER",
+            "test_bank@23, test_employee1, 100, GUARD, test_employee2, 100, PROGRAMMER",
+            "test_bank, test_employee1, 100, GUARD, test_employee2, 100, LAWYER",
 
-        twinBank = new Bank("test_bank",
-                new Employee("test_employee3", 100, BankPost.GUARD),
-                new Employee("test_employee2", 100, BankPost.PROGRAMMER));
-        assertNotEquals(bank.hashCode(), twinBank.hashCode());
+    })
+    public void testHashCodeNotEquals(String bankName, String employee1Name, int employee1HP, BankPost employee1PostName,
+                                      String employee2Name, int employee2HP, BankPost employee2PostName) {
 
-        twinBank = new Bank("test_bank#@",
-                new Employee("test_employee1", 100, BankPost.GUARD),
-                new Employee("test_employee2", 100, BankPost.PROGRAMMER));
-        assertNotEquals(bank.hashCode(), twinBank.hashCode());
-
-        twinBank = new Bank("test_bank",
-                new Employee("test_employee1", 100, BankPost.GUARD),
-                new Employee("test_employee2", 100, BankPost.LAWYER));
+        Bank twinBank = new Bank(bankName,
+                new Employee(employee1Name, employee1HP, employee1PostName),
+                new Employee(employee2Name, employee2HP, employee2PostName));
         assertNotEquals(bank.hashCode(), twinBank.hashCode());
     }
 

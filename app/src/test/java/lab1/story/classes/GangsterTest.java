@@ -31,8 +31,8 @@ public class GangsterTest {
 
     @Test
     public void testEquals() {
-        assertTrue("Equals does not work!", gangster1.equals(gangster3));
-        assertFalse("Equals does not work!", gangster1.equals(gangster2));
+        assertEquals("Equals does not work!", gangster1, gangster3);
+        assertNotEquals("Equals does not work!", gangster1, gangster2);
     }
 
     @Test

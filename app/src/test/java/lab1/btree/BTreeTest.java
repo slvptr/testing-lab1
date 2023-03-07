@@ -40,9 +40,9 @@ public class BTreeTest {
         bTree.insert(17);
 
         assertTrue(isPrefixEqual(bTree.root.key, 9, 15));
-        assertEquals( isPrefixEqual(bTree.root.child[0].key, 3, 8), true);
-        assertEquals( isPrefixEqual(bTree.root.child[1].key, 10, 11), true);
-        assertEquals( isPrefixEqual(bTree.root.child[2].key, 17, 20, 21), true);
+        assertTrue(isPrefixEqual(bTree.root.child[0].key, 3, 8));
+        assertTrue(isPrefixEqual(bTree.root.child[1].key, 10, 11));
+        assertTrue(isPrefixEqual(bTree.root.child[2].key, 17, 20, 21));
     }
 
     @Test
@@ -51,6 +51,6 @@ public class BTreeTest {
         bTree.insert(3);
         bTree.insert(5);
 
-        assertEquals( isPrefixEqual(bTree.root.key, 1, 3, 5), true);
+        assertTrue(isPrefixEqual(bTree.root.key, 1, 3, 5));
     }
 }
